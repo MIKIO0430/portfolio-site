@@ -1,0 +1,501 @@
+/* =========================
+   RESET & BASE
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Helvetica Neue",
+        "Noto Sans JP",
+        sans-serif;
+    background: #050505;
+    color: #ffffff;
+    overflow-x: hidden;
+    line-height: 1.7;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(0, 255, 200, 0.08), transparent 30%),
+        radial-gradient(circle at 80% 60%, rgba(0, 100, 255, 0.08), transparent 35%),
+        linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+    background-size: auto, auto, 50px 50px, 50px 50px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(5, 5, 5, 0.75);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #fff;
+}
+
+.logo span {
+    color: #00f5c4;
+}
+
+nav ul {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+nav a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00f5c4;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 30px 80px;
+}
+
+.hero-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.hero-tag {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid rgba(0,245,196,0.4);
+    border-radius: 50px;
+    color: #00f5c4;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    background: rgba(0,245,196,0.05);
+}
+
+.hero h1 {
+    font-size: clamp(55px, 9vw, 120px);
+    line-height: 1;
+    letter-spacing: -4px;
+    font-weight: 900;
+    margin-bottom: 30px;
+}
+
+.hero h1 .gradient {
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #00f5c4,
+        #4d7cff
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-text {
+    max-width: 650px;
+    color: #aaa;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 28px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: #00f5c4;
+    color: #000;
+}
+
+.btn-primary:hover {
+    background: #fff;
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    border: 1px solid #444;
+    color: #fff;
+}
+
+.btn-outline:hover {
+    border-color: #00f5c4;
+    color: #00f5c4;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+section {
+    padding: 120px 30px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-label {
+    color: #00f5c4;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.section-title {
+    font-size: clamp(38px, 5vw, 65px);
+    margin-bottom: 60px;
+    letter-spacing: -2px;
+}
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.profile-image {
+    aspect-ratio: 1/1;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,245,196,0.3),
+            rgba(77,124,255,0.2)
+        );
+    border: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.profile-content h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.profile-content p {
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+.profile-info {
+    margin-top: 30px;
+}
+
+.profile-info div {
+    padding: 15px 0;
+    border-bottom: 1px solid #222;
+}
+
+.profile-info span {
+    color: #00f5c4;
+    display: inline-block;
+    width: 120px;
+}
+
+/* =========================
+   WORKS
+========================= */
+
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.work-card {
+    position: relative;
+    aspect-ratio: 16/10;
+    background: #111;
+    border: 1px solid #222;
+    overflow: hidden;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.work-card:hover {
+    transform: translateY(-8px);
+    border-color: #00f5c4;
+}
+
+.work-image {
+    width: 100%;
+    height: 100%;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,245,196,0.2),
+            rgba(77,124,255,0.2)
+        );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    transition: 0.4s;
+}
+
+.work-card:hover .work-image {
+    transform: scale(1.08);
+}
+
+.work-overlay {
+    position: absolute;
+    inset: 0;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,0.95)
+        );
+}
+
+.work-category {
+    color: #00f5c4;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.work-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* =========================
+   TOOLS
+========================= */
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.tool-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid #222;
+    padding: 35px 25px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.tool-card:hover {
+    border-color: #00f5c4;
+    background: rgba(0,245,196,0.05);
+}
+
+.tool-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.tool-card h3 {
+    font-size: 16px;
+}
+
+.tool-card p {
+    color: #777;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-box {
+    padding: 70px;
+    border: 1px solid #222;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,245,196,0.08),
+            rgba(77,124,255,0.08)
+        );
+    text-align: center;
+}
+
+.contact-box h2 {
+    font-size: clamp(35px, 5vw, 60px);
+    margin-bottom: 20px;
+}
+
+.contact-box p {
+    color: #aaa;
+    margin-bottom: 35px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 40px 30px;
+    border-top: 1px solid #222;
+    text-align: center;
+    color: #666;
+    font-size: 13px;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s ease;
+}
+
+.fade-up.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+
+    .works-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .nav-container {
+        padding: 15px 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #080808;
+        display: none;
+        border-top: 1px solid #222;
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 25px;
+        gap: 20px;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    section {
+        padding: 80px 20px;
+    }
+
+    .works-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-box {
+        padding: 50px 25px;
+    }
+
+    .profile-info span {
+        width: 90px;
+    }
+}
